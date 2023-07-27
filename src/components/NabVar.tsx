@@ -20,7 +20,7 @@ export const NabVar = () => {
             <li>
                 <NavLink 
                     to="/"
-                    onClick={() => setSearchByCategory()}
+                    onClick={() => setSearchByCategory('')}
                     className={({isActive}) => 
                     isActive ? activeStyle : undefined
                 }

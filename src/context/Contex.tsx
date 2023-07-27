@@ -15,7 +15,7 @@ interface ShoppingState {
     setOrden:any,
     items: Products[],
     setItems:React.Dispatch<React.SetStateAction<Products[]>>;
-    searchByTitle:string | null,
+    searchByTitle:string | undefined,
     setSearchByTitle: React.Dispatch<React.SetStateAction<string | undefined>>;
     filteredItems:Products[] | undefined,
     setfilteredItems:React.Dispatch<React.SetStateAction<Products[]| undefined>>;
@@ -32,7 +32,7 @@ interface ShoppingState {
 
 export const ShppoingCarContext = createContext<ShoppingState>({}as ShoppingState);
 
-export const ShoppingCarProvider:React.FC = ({children}:any) => {
+export const ShoppingCarProvider = ({children}:any) => {
     //Shopping cart Incremet quantity
     const [count, setCount] = useState(0)
 
@@ -61,7 +61,7 @@ export const ShoppingCarProvider:React.FC = ({children}:any) => {
     
 
     //search
-    const [searchByTitle, setSearchByTitle] = useState<string| null>(null)
+    const [searchByTitle, setSearchByTitle] = useState<string| undefined>()
     console.log('searchTitle', searchByTitle)
 
      // Get products by category
